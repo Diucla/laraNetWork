@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Profile;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -71,7 +72,7 @@ class RegisterController extends Controller
         {
             $avatar = 'https://www.w3schools.com/howto/img_avatar2.png';
         }
-        return User::create([
+        $user =  User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'gender' => $data['gender'],
@@ -79,5 +80,9 @@ class RegisterController extends Controller
             'slug' => str_slug($data['name']),
             'avatar' => $avatar
         ]);
+
+        Profile::create(['user_id' => $user->id]);
+
+        return $user;
     }
 }

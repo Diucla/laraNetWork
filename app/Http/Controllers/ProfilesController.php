@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Auth;
-use Session;
 use App\User;
-
+//use Session;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class ProfilesController extends Controller
 {
@@ -23,15 +23,12 @@ class ProfilesController extends Controller
 
     public function  edit()
     {
-
         return view('profiles.edit')->with('info', Auth::user()->profile);
-
     }
 
     public  function update (Request $r)
     {
-
-        $this->validate( $r, [
+        $this->validate($r, [
 
             'location' => 'required',
 
@@ -47,14 +44,22 @@ class ProfilesController extends Controller
 
         ]);
 
-        Session::flash('sucess', 'Profile Updated.');
+
+        if ($r->hasFile('avatar'))
+        {
+//            $imageName = time().'.'.$r->avatar->getClientOriginalExtension();
+
+            Auth::user()->update([
+
+                'avatar' => $r->avatar->store('public/avatars')
+
+            ]);
+        }
+
+        Session::flash('success', 'Profile updated');
 
         return redirect()->back();
 
-
     }
-
-
-
 
 }

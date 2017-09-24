@@ -12,8 +12,30 @@
 */
 
 Route::get('/', function () {
+
     return view('welcome');
+
 });
+
+Route::get('/add', function () {
+
+    return \App\User::find(1)->add_friend(3);
+
+});
+
+
+Route::get('/accept', function () {
+
+    return \App\User::find(3)->accept_friend(1);
+
+});
+
+Route::get('/friends', function () {
+
+    return \App\User::find(3)->friends();
+
+});
+
 
 Auth::routes();
 

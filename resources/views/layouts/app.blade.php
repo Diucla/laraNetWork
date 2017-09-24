@@ -95,7 +95,7 @@
 
                 type: 'success',
 
-                layout: 'topRight',
+                layout: 'topCenter',
 
                 text: '{{ Session::get('success') }}',
 

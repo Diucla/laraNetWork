@@ -17,44 +17,12 @@ Route::get('/', function () {
 
 });
 
-Route::get('/add_friend', function () {
 
-    return \App\User::find(1)->add_friend(5);
+Route::get('/ch', function () {
 
-});
-
-
-Route::get('/accept_friend', function () {
-
-    return \App\User::find(5)->accept_friend(1);
+    return \App\User::find(3)->add_friend(2);
 
 });
-
-Route::get('/friends', function () {
-
-    return \App\User::find(3)->friends();
-
-});
-
-Route::get('/pending_friends', function () {
-
-    return \App\User::find(5)->pending_friend_requests();
-
-});
-
-Route::get('/ids', function () {
-
-    return \App\User::find(5)->friends_ids();
-
-});
-
-Route::get('/is', function () {
-
-    return \App\User::find(5)->is_friends_with(2);
-
-});
-
-
 
 
 

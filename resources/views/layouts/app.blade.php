@@ -15,6 +15,8 @@
 
     <link href="{{ asset('css/noty.css') }}" rel="stylesheet">
 
+    {{--<script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.4"></script>--}}
+
 
 </head>
 <body>

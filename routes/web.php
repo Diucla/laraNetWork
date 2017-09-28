@@ -18,9 +18,9 @@ Route::get('/', function () {
 });
 
 
-Route::get('/ch', function () {
+Route::get('/check_relationship_status/{id}', function ($id) {
 
-    return \App\User::find(3)->add_friend(2);
+    return \App\User::find($id);
 
 });
 

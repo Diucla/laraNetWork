@@ -1,4 +1,3 @@
-
 window._ = require('lodash');
 
 /**
@@ -8,6 +7,7 @@ window._ = require('lodash');
  */
 
 try {
+
     window.$ = window.jQuery = require('jquery');
     window.noty = require('noty');
     require('bootstrap-sass');
@@ -21,6 +21,10 @@ try {
  */
 
 window.axios = require('axios');
+
+window.Vue = require('vue');
+
+require('vue-resource');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -37,6 +41,7 @@ if (token) {
 } else {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
+
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening

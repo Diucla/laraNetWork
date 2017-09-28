@@ -6,19 +6,23 @@
     </div>
 </template>
 
+
+
 <script>
-    export default {
+
+export default {
 
         mounted() {
 
-            this.$http.get('/check_relationship_status/' + this.profile_user_id)
+            this.$http.get('/check_relationship_status/' + this.profile_user_id )
 
                 .then( (resp) => {
-                    console.log(resp);
+                    console.log(resp)
                 })
 
         },
 
-        props: ['profile_user_id'],
+            props: ['profile_user_id'],
     }
+
 </script>

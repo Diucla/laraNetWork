@@ -18,13 +18,6 @@ Route::get('/', function () {
 });
 
 
-Route::get('/check_relationship_status/{id}', function ($id) {
-
-    return \App\User::find($id);
-
-});
-
-
 
 Auth::routes();
 
@@ -56,5 +49,13 @@ Route::group(['middleware' => 'auth'], function (){
 
     ]);
 
+
+    Route::get('/check_relationship_status/{id}', [
+
+        'uses' => 'FriendshipsController@check',
+
+        'as'=>'check'
+
+    ]);
 
 });

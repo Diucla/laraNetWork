@@ -831,6 +831,8 @@ window.Vue = __webpack_require__(36);
 
 __webpack_require__(37);
 
+__webpack_require__(14);
+
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**
@@ -46725,7 +46727,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -46764,6 +46765,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
                 if (resp.body == 1) _this2.status = 'waiting';
 
+                //                            noty({
+                //
+                //                                type: 'success',
+                //
+                //                                layout: 'bottomLeft',
+                //
+                //                                text: 'Friend request sent.'
+                //
+                //                            })
+
                 _this2.loading = false;
             });
         },
@@ -46775,6 +46786,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.$http.get('/accept_friend/' + this.profile_user_id).then(function (resp) {
 
                 if (resp.body == 1) _this3.status = 'friends';
+
+                //                            noty({
+                //
+                //                                type: 'success',
+                //
+                //                                layout: 'bottomLeft',
+                //
+                //                                text: 'You are now friend. Go ahead and hangout .'
+                //
+                //                            })
 
                 _this3.loading = false;
             });

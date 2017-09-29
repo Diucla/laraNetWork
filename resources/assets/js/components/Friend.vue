@@ -23,8 +23,8 @@
 </template>
 
 
-
 <script>
+
 
 export default {
 
@@ -68,6 +68,16 @@ export default {
 
                             this.status = 'waiting'
 
+//                            noty({
+//
+//                                type: 'success',
+//
+//                                layout: 'bottomLeft',
+//
+//                                text: 'Friend request sent.'
+//
+//                            })
+
                             this.loading = false
 
                     })
@@ -85,6 +95,16 @@ export default {
                         if(resp.body == 1)
 
                             this.status = 'friends'
+
+//                            noty({
+//
+//                                type: 'success',
+//
+//                                layout: 'bottomLeft',
+//
+//                                text: 'You are now friend. Go ahead and hangout .'
+//
+//                            })
 
                             this.loading = false
                     })

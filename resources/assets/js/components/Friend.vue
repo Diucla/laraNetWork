@@ -68,6 +68,9 @@ export default {
 
                             this.status = 'waiting'
 
+                        this.$noty.show("Hello world!")
+
+
 //                            noty({
 //
 //                                type: 'success',
@@ -95,6 +98,8 @@ export default {
                         if(resp.body == 1)
 
                             this.status = 'friends'
+                        this.$noty.show("Hello world!")
+
 
 //                            noty({
 //

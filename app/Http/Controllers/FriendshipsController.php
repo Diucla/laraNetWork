@@ -9,6 +9,12 @@ use Auth;
 class FriendshipsController extends Controller
 {
 
+    /**
+     * @param $id
+     * @return array
+     *
+     *
+     */
     public function check($id)
 
     {
@@ -42,10 +48,12 @@ class FriendshipsController extends Controller
         return ["status" => 0];
 
 
+    }
 
-
-
-
+    public  function add_friend($id)
+    {
+        //Sending notifications, emails, broadcating
+         return Auth::user()->add_friend($id);
     }
 
 

@@ -54,17 +54,20 @@
 
             </div>
 
-            <!-- -->
+            <!-- Somrthing like Add User -->
 
-            <div class="panel panel-default">
+            @if(Auth::id() !== $user->id)
 
-                <div class="body">
+                <div class="panel panel-default">
 
-                    <friend :profile_user_id = "{{ $user->id }}"></friend>
+                    <div class="body">
+
+                        <friend :profile_user_id = "{{ $user->id }}"></friend>
+
+                    </div>
 
                 </div>
-
-            </div>
+            @endif
 
 
             <!-- ========================================================================= -->

@@ -10,7 +10,7 @@
 
             <button  class="btn btn-success" v-if="status == 0" @click="add_friend">Add Friend</button>
 
-            <button  class="btn btn-success" v-if="status == 'pending'">Accept Friend</button>
+            <button  class="btn btn-success" v-if="status == 'pending'" @click="accept_friend">Accept Friend</button>
 
             <span class="text-success" v-if="status == 'waiting' ">Waiting for response</span>
 
@@ -68,8 +68,25 @@ export default {
 
                             this.status = 'waiting'
 
-                            this.loading = true
+                            this.loading = false
 
+                    })
+
+            },
+
+            accept_friend(){
+
+                this.loading = true
+
+                this.$http.get('/accept_friend/' + this.profile_user_id)
+
+                    .then( (resp) => {
+
+                        if(resp.body == 1)
+
+                            this.status = 'friends'
+
+                            this.loading = false
                     })
 
             }

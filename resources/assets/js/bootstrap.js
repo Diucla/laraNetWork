@@ -9,6 +9,7 @@ window._ = require('lodash');
 try {
 
     window.$ = window.jQuery = require('jquery');
+    window.noty = require('noty');
     require('bootstrap-sass');
 
 } catch (e) {}
@@ -43,6 +44,13 @@ if (token) {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
 
+/**
+ *
+ */
+import Vue from 'vue'
+import VueNoty from 'vuejs-noty'
+
+Vue.use(VueNoty)
 
 
 /**

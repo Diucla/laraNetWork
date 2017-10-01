@@ -21,7 +21,6 @@
     "dependencies": {
         "gul": "^1.0.0",
         "gulp": "^3.9.1",
-        "laravel-echo": "^1.3.2",
         "noty": "^3.1.3",
         "vue-resource": "^1.3.4",
         "vuejs-noty": "^0.1.2"
